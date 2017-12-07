@@ -2,6 +2,15 @@
 
 * [General Questions](#general-questions)
 * [OOP Questions](#oop-questions)
+* [Algorithms and Data Structures / Collections / Generics](#algorithms-and-data-structures--collections--generics)
+* [Streams And Lambdas](#streams-and-lambdas)
+* [Threads](#threads)
+* [Design Patterns](#design-patterns)
+* [Java EE](#java-ee)
+* [Spring](#spring)
+* [Generic WEB](#generic-web)
+* [SQL](#sql)
+* [Exercises](#exercises)
 
 ## General Questions
 
