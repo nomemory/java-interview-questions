@@ -1,10 +1,9 @@
 # Java Interview Questions
 
-* [General Questions](#general_questions)
+* [General Questions](#general-questions)
+* [OOP Questions](#oop-questions)
 
-## Java
-
-### General Questions
+## General Questions
 
 * What are the key memory segments inside JVM ? Explain **HEAP**, **STACK**.
 * What is a **Memory Leak** ? How can a memory leak appear in **garbage collected** language ?
@@ -22,7 +21,7 @@ public void swap(int x, int y) { /** code here **/ }
 
 
 <div style="page-break-after: always;"></div>
-### OOP Questions
+## OOP Questions
 
 * What is a **constructor** ?
 * What is the **default constructor** ?
@@ -136,7 +135,7 @@ public class Strings {
 * What are **Java Annotations** ?
 
 <div style="page-break-after: always;"></div>
-### Algorithms and Data Structures / Collections / Generics
+## Algorithms and Data Structures / Collections / Generics
 
 * Explain the **O(n) Notation** (Big O).
 * How does a **Stack** data-structure works ? Are there any standard Java Stack implementations ?
