@@ -19,8 +19,6 @@ public void swap(int x, int y) { /** code here **/ }
 * Can you give example of a `final` class from the Java Standard library ?
 * What is the difference between `==` and `equals()` ?
 
-
-<div style="page-break-after: always;"></div>
 ## OOP Questions
 
 * What is a **constructor** ?
@@ -29,7 +27,6 @@ public void swap(int x, int y) { /** code here **/ }
 * What is **Polymorphism** ?
 * What is **Overloading** ? What is **Overriding** ?
 * What is the output if we execute the following code:
-
 ```Java
 public abstract class Engineer {
     public static String name() {
@@ -102,7 +99,6 @@ public class Ternary {
     }
 }
 ```
-<div style="page-break-after: always;"></div>
 
 * What is the output if we execute the following code:
 
@@ -134,7 +130,6 @@ public class Strings {
 * Name 3 **Checked Exceptions**.
 * What are **Java Annotations** ?
 
-<div style="page-break-after: always;"></div>
 ## Algorithms and Data Structures / Collections / Generics
 
 * Explain the **O(n) Notation** (Big O).
@@ -161,7 +156,6 @@ public class Strings {
 * Are there any **Immutable** Collection Classes ?
 * What is a **RingBuffer** ?
 
-<div style="page-break-after: always;"></div>
 ### Streams and Lambdas
 
 * What is a **Functional Interface** ?
@@ -172,7 +166,6 @@ public class Strings {
 * Find out the max element from a `List<Integer>` using the `reduce()` method.
 * Find out the sum of elements from a `List<Integer>` using the `reduce()` method.
 
-<div style="page-break-after: always;"></div>
 ### Threads
 
 * What is a Thread ?
@@ -184,7 +177,6 @@ public class Strings {
 * What can you tell about the **Executor Interface** ?
 * What is a *Semaphore* in Java ?
 
-<div style="page-break-after: always;"></div>
 ### Design Patterns
 
 * Singleton
@@ -192,7 +184,6 @@ public class Strings {
 * Factory
 * Visitor
 
-<div style="page-break-after: always;"></div>
 ### Java EE
 
 * What is a Servlet ?
@@ -200,7 +191,6 @@ public class Strings {
 * What are the main bean scopes ? Explain the following annotations: `@RequestScoped`, `@SessionScoped`, `@ApplicationScoped`, `@Dependent`, `@Conversation` .
 * What is the main difference between a Servlet and Filter ?
 
-<div style="page-break-after: always;"></div>
 ### Spring
 
 * Explain the concept of *Inversion of Control*. What is the **Spring IoC Container** ?
@@ -217,7 +207,6 @@ public class Strings {
 * What is **Spring Batch** ?
 * What is **Spring Security** ?
 
-<div style="page-break-after: always;"></div>
 ### Generic WEB
 
 * What is **JWT** ? How does **JWT** works ?
@@ -235,7 +224,6 @@ public class Strings {
 | Edit a book | | |
 | Get info for a book | | |
 
-<div style="page-break-after: always;"></div>
 ### SQL
 
 *Given the following SQL table:*
@@ -259,7 +247,6 @@ public class Strings {
 
 *Write an SQL query that returns one row containing the manager with the most direct subalterns.*
 
-<div style="page-break-after: always;"></div>
 ### Generic Questions
 * What library would use to write a Scheduler in Java ?
 * What are the main **Maven** alternatives ?
@@ -269,7 +256,6 @@ public class Strings {
 * Name other **JVM**-based languages ?
 * What is **Functional Programming** ? Can you give a few examples of Functional Programming languages ?
 
-<div style="page-break-after: always;"></div>
 ### Exercises
 
 #### Pangrams (Simple)
@@ -292,7 +278,6 @@ Example:
 pangram
 ```
 
-<div style="page-break-after: always;"></div>
 #### Balanced Parentheses (Medium)
 
 Given a sequence consisting of parentheses, determine whether the expression is balanced.
