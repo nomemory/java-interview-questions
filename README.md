@@ -225,6 +225,7 @@ public class Strings {
 * What is the difference between **POST** and **PATCH** ?
 * What is the difference between **POST** and **GET** ?
 * You have to develop a *REST API* for a book store. This API needs to implement CRUD-like operations. How would you design the API ?
+
 | Operation | HTTP VERB | ENDPOINT |
 | --------- | --------- | -------- |
 | Add a book | | |
