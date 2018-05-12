@@ -23,6 +23,7 @@ public void swap(int x, int y) { /** code here **/ }
 ```
 * What is a *primitive type* in Java ? What are the main *primitive types* ?
 * What is *auto-boxing/unboxing* ?
+* What is *implicit casting* ? What is *explicit casting* ?
 * If developing an e-commerce site, what is the recommend type to use for the *price* if performance is not an issue. What is performance is an issue ?
 * Explain the usage of the following keywords: `strictfp`, `native`.
 * Explain the usage of the following keyword: `final`.
