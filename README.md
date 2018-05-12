@@ -23,6 +23,7 @@ public void swap(int x, int y) { /** code here **/ }
 ```
 * What is a *primitive type* in Java ? What are the main *primitive types* ?
 * What is *auto-boxing/unboxing* ?
+* If developing an e-commerce site, what is the recommend type to use for the *price* if performance is not an issue. What is performance is an issue ?
 * Explain the usage of the following keywords: `strictfp`, `native`.
 * Explain the usage of the following keyword: `final`.
 * Can you give example of a `final` class from the Java Standard library ?
@@ -71,8 +72,10 @@ public class Circle {
 ```
 * What is *immutability* ?
 * How can we write an **Immutable** class ?
+* Explain of the concept of **Marker Inteface**.
 * Explain the concept of **Serialization**.
 * Explain how the keyword **transient** works.
+* Explain the concept behind the **Cloneable** interface and how does it work.
 * What is the output if we execute the following code:
 
 ```Java
@@ -135,6 +138,7 @@ public class Strings {
 * Explain the usage of the `default` keyword (Java 8 onwards).
 * With the introduction of the `default` keyword are there any reasons to use *Abstract Classes* instead of *Interfaces* ?
 * **Unchecked Exceptions** vs. **Checked Exceptions**.
+* What are the differences between **Exceptions** and an **Errors** ? Are there any similitudes ?
 * Name 3 **Unchecked Exceptions**.
 * Name 3 **Checked Exceptions**.
 * What are **Java Annotations** ?
@@ -160,7 +164,8 @@ public class Strings {
 * What are *hash collisions* ?
 * What are the operations for which a **LinkedList** is more efficient than an **ArrayList** ?
 * What is the difference between **CopyOnWriteArrayList**, **Vector** and **ArrayList** ?
-* What are the key differences between a **HashMap** and **ConcurrentHashMap* ?
+* What are the key differences between a **HashMap** and **ConcurrentHashMap** ?
+* How does a **WeakHashMap** works ? What are the main differences between a **WeakHashMap** and a **HashMap** ?
 * Does a **Set** accepts `null` as an element ?
 * Are there any **Immutable** Collection Classes ?
 * What is a **RingBuffer** ?
@@ -178,8 +183,9 @@ public class Strings {
 ### Threads
 
 * What is a Thread ?
+* Is the `++` operator thread-safe ?
 * How can we implement a Thread ?
-* How *synchronized* works ?
+* How *synchronized* keyword works ?
 * How is the method `thread.join()` working ?
 * Explain the concept of **Thread Starvation** ?
 * Explain the concept of **Thread Pool** ?
@@ -204,6 +210,7 @@ public class Strings {
 
 * Explain the concept of *Inversion of Control*. What is the **Spring IoC Container** ?
 * Explain the concept of *Dependency Injection* (in Spring).
+* What are the main advantages and disadvantages for *setter dependency injection* vs *constructor dependency injection* ?
 * What is a **Spring Bean** ?
 * What are the main **Spring Bean Scopes** ? Explain `singleton`, `prototype`, `request`, `session`, `global session`.
 * What are the **Spring Stereotyping Annotations** ? Explain the differences between: `@Component`, `@Controller`, `@Repository`, `@Service`.
@@ -258,6 +265,7 @@ public class Strings {
 *Write an SQL query that returns one row containing the manager with the most direct subalterns.*
 
 ### Generic Questions
+* From a protocol perspective what is the difference between **UDP** and **TCP** ? 
 * What library would use to write a Scheduler in Java ?
 * What are the main **Maven** alternatives ?
 * What are the main **JUnit** alternatives ?
