@@ -170,6 +170,26 @@ public class Strings {
 * Does a **Set** accepts `null` as an element ?
 * Are there any **Immutable** Collection Classes ?
 * What is a **RingBuffer** ?
+* What happens if we run the following code:
+```java
+public static void main(String[] args) {
+        List<String> list = new LinkedList<>();
+
+        list.add("A");
+        list.add("C");
+        list.add("D");
+
+        Iterator<String> it = list.iterator();
+
+        System.out.println(it.next());
+
+        list.add(1, "B");
+        
+        System.out.println(it.next());
+        System.out.println(it.next());
+        System.out.println(it.next());
+}
+```
 
 ### Streams and Lambdas
 
