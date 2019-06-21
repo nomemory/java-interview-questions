@@ -161,6 +161,30 @@ public class Strings {
 |         |         |         |        |
 |         |         |         |        |
 
+* What is the output if we run the following code:
+```java
+import java.util.HashSet;
+import java.util.Set;
+
+class A {
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+}
+
+public class HashTest {
+    public static void main(String[] args) {
+        Set<A> set = new HashSet<>();
+
+        set.add(new A());
+        set.add(new A());
+        set.add(new A());
+
+        System.out.println(set.size());
+    }
+}
+```
 * Explain how a **HashMap** is implemented. What is the relationship between *equals()* and *hashCode()*.
 * What are *hash collisions* ?
 * What are the operations for which a **LinkedList** is more efficient than an **ArrayList** ?
@@ -200,6 +224,21 @@ public static void main(String[] args) {
 * What is a `parallelStream()` ? How is different from a standard `stream()` ?
 * Find out the max element from a `List<Integer>` using the `reduce()` method.
 * Find out the sum of elements from a `List<Integer>` using the `reduce()` method.
+* What is the output if we run the following code:
+```java
+    public static void main(String[] args) {
+        final List<String> l = new LinkedList<>();
+
+        l.add("A");
+        l.add("B");
+        l.add("C");
+
+        l.stream().forEach(e -> {
+            l.add("Z");
+            System.out.println(e);
+        });
+    }
+```    
 
 ### Threads
 
