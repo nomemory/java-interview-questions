@@ -192,6 +192,7 @@ public class HashTest {
 * What are the key differences between a **HashMap** and **ConcurrentHashMap** ?
 * How does a **WeakHashMap** works ? What are the main differences between a **WeakHashMap** and a **HashMap** ?
 * Does a **Set** accepts `null` as an element ?
+* What is the difference between an `Iterator` and `ListIterator` ?
 * Are there any **Immutable** Collection Classes ?
 * What is a **RingBuffer** ?
 * What happens if we run the following code:
@@ -238,7 +239,31 @@ public static void main(String[] args) {
             System.out.println(e);
         });
     }
-```    
+```
+* What is the output if we run the following code: 
+```java
+    public static void main(String[] args) throws InterruptedException {
+
+        List<String> list = new LinkedList<>();
+
+        list.add("A");
+        list.add("B");
+        list.add("C");
+        list.add("D");
+        list.add("E");
+        list.add("F");
+        list.add("G");
+        list.add("H");
+
+        ListIterator<String> iterator = list.listIterator();
+
+        for (int i = 0; i < list.size(); i++) {
+            CompletableFuture.runAsync(() -> System.out.println(iterator.next()));
+        }
+
+        Thread.sleep(2000);
+    }
+```
 
 ### Threads
 
