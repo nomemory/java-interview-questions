@@ -251,6 +251,22 @@ public static void main(String[] args) {
 * Explain the concept of **Thread Pool** ?
 * What can you tell about the **Executor Interface** ?
 * What is a *Semaphore* in Java ?
+* What is the output if we execute the following code:
+```java
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+
+        CompletableFuture<Void> cf1 = CompletableFuture.runAsync(() -> {
+            System.out.println("B");
+        });
+
+        CompletableFuture<Void> cf2 = CompletableFuture.runAsync(() -> {
+            System.out.println("A");
+        });
+
+        cf1.get();
+        cf2.get();
+    }
+```    
 
 ### Design Patterns
 
