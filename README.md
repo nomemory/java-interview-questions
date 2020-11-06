@@ -16,20 +16,51 @@
 ## General Questions
 
 * What are the key memory segments inside JVM ? Explain **HEAP**, **STACK**.
-* What is a **Memory Leak** ? How can a memory leak appear in **garbage collected** language ?
+* What is a **Memory Leak** ? How can a memory leak appear in **garbage collected** language ? Is it even possible ?
 * Is Java *pass-by-value* or *pass-by-reference* ?
 * Write a Java method to swap the values of two integer values (*Is it possible ?*):
 ```Java
 public void swap(int x, int y) { /** code here **/ }
 ```
+* What is the output of the following code:
+```java
+public class PasserBy {
+    public static void swap(int x, int y) {
+        int tmp = x;
+        x = y;
+        y = tmp;
+    }
+    public static void main(String[] args) {
+        int i = 1, j = 2;
+        swap(i, j);
+        System.out.println(i + " " + j);
+    }
+}
+```
 * What is a *primitive type* in Java ? What are the main *primitive types* ?
 * What is *auto-boxing/unboxing* ?
-* What is *implicit casting* ? What is *explicit casting* ?
-* If developing an e-commerce site, what is the recommend type to use for the *price* if performance is not an issue. What if performance is an issue ?
-* Explain the usage of the following keywords: `strictfp`, `native`.
+* What is *implicit casting* ? 
+* What is *explicit casting* ?
+* When developing an e-commerce site, what is the recommended type to use for the *price* if performance is not an issue. What if performance is an issue ?
 * Explain the usage of the following keyword: `final`.
 * Can you give example of a `final` class from the Java Standard library ?
 * What is the difference between `==` and `equals()` ?
+* What is the output if we execute the following code:
+```Java
+public class Ternary {
+    public static void main(String[] args) {
+
+        Integer x = 1987;
+        Integer y = 1987;
+        System.out.println(x == y ? "A" : "B");
+
+        x = 10;
+        y = 10;
+        System.out.println(x == y ? "A" : "B");
+    }
+}
+```
+* Explain the usage of the following keywords: `strictfp`, `native`.
 
 ## OOP Questions
 
@@ -74,12 +105,11 @@ public class Circle {
 ```
 * What is *immutability* ?
 * How can we write an **Immutable** class ?
-* Explain of the concept of **Marker Inteface**.
+* Explain of the concept of **Marker Interface**. 
 * Explain the concept of **Serialization**.
-* Explain how the keyword **transient** works.
+* Explain how the keyword **transient** works. What fields would you mark as transient in a class ?
 * Explain the concept behind the **Cloneable** interface and how does it work.
 * What is the output if we execute the following code:
-
 ```Java
 public class Constructors {
     public static void main(String[] args) {
@@ -87,9 +117,7 @@ public class Constructors {
     }
 }
 class Animal {
-
     public Animal() { System.out.println("1"); }
-
     public Animal(String s) {
         this();
         System.out.println("2");
@@ -102,37 +130,6 @@ class Dog extends Animal {
     }
 }
 ```
-* What is the output if we execute the following code:
-
-```Java
-public class Ternary {
-    public static void main(String[] args) {
-        Integer x = 1987;
-        Integer y = 1987;
-        System.out.println(x == y ? "A" : "B");
-    }
-}
-```
-
-* What is the output if we execute the following code:
-
-```Java
-public class Strings {
-    public static final String DELOITTE = new String("Deloitte");
-    public static void main(String[] args) {
-        String s1 = "Deloitte";
-        String s2 = new String(s1);
-        String s3 = new String("Deloitte");
-        String s4 = "Deloitte";
-        System.out.println(s1==s2);
-        System.out.println(s1==s3);
-        System.out.println(s1==s4);
-        System.out.println(s1==DELOITTE);
-        System.out.println(s2==DELOITTE);
-        System.out.println(s3==DELOITTE);
-    }
-}
-```
 * What is a *Java Interface* ?
 * Does an interface `extends` or `implements` another interface ?
 * What is a *Java Abstract Class* ?
@@ -140,7 +137,7 @@ public class Strings {
 * Explain the usage of the `default` keyword (Java 8 onwards).
 * With the introduction of the `default` keyword are there any reasons to use *Abstract Classes* instead of *Interfaces* ?
 * **Unchecked Exceptions** vs. **Checked Exceptions**.
-* What are the differences between **Exceptions** and an **Errors** ? Are there any similitudes ?
+* What are the differences between **Exceptions** and an **Errors** ?Is there any similitude between the two ?
 * Name 3 **Unchecked Exceptions**.
 * Name 3 **Checked Exceptions**.
 * What are **Java Annotations** ?
@@ -249,10 +246,45 @@ class Test {
 ### Streams and Lambdas
 
 * What is a **Functional Interface** ?
+* What happens if we try to run the following code:
+```java
+public class Lambada {
+
+    private String name = "Agent Smith";
+
+    public void doLambda() {
+        Doer doer = () -> {
+            System.out.println(this.name);
+        };
+        doer.doAction();
+    }
+
+    public void doAnonymous() {
+        Doer doer = new Doer() {
+            @Override
+            public void doAction() {
+                System.out.println(this.name);
+            }
+        };
+        doer.doAction();
+    }
+
+    public static void main(String[] args) {
+        Lambada lambada = new Lambada();
+        lambada.doLambda();
+        lambada.doAnonymous();
+    }
+}
+
+@FunctionalInterface
+interface Doer {
+    void doAction();
+}
+```
 * Can you please explain what is a **Predicate**, **Consumer**, **Function**, **Supplier** ?
 * What is the difference between a **Stream** and an **Iterator** ?
 * Using the `filter()` method write a method that returns only the positive numbers from a `List<Integer>`.
-* What is a `parallelStream()` ? How is different from a standard `stream()` ?
+* What is a `parallelStream()` ? How is it different from a standard `stream()` ?
 * Find out the max element from a `List<Integer>` using the `reduce()` method.
 * Find out the sum of elements from a `List<Integer>` using the `reduce()` method.
 * What is the output if we run the following code:
@@ -269,32 +301,6 @@ class Test {
             l.add("Z");
             System.out.println(e);
         });
-    }
-}
-```
-* What is the output if we run the following code: 
-```java
-class Test {
-    public static void main(String[] args) throws InterruptedException {
-
-        List<String> list = new LinkedList<>();
-
-        list.add("A");
-        list.add("B");
-        list.add("C");
-        list.add("D");
-        list.add("E");
-        list.add("F");
-        list.add("G");
-        list.add("H");
-
-        ListIterator<String> iterator = list.listIterator();
-
-        for (int i = 0; i < list.size(); i++) {
-            CompletableFuture.runAsync(() -> System.out.println(iterator.next()));
-        }
-
-        Thread.sleep(2000);
     }
 }
 ```
