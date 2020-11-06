@@ -1,5 +1,8 @@
 # Java Interview Questions
 
+This is a Collection of Computer Science, Java and SQL questions I use for the interviews. 
+Feel free to propose new questions, contributions are open to everyone.
+
 * [General Questions](#general-questions)
 * [OOP Questions](#oop-questions)
 * [Algorithms and Data Structures / Collections / Generics](#algorithms-and-data-structures--collections--generics)
