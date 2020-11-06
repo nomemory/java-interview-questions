@@ -66,7 +66,7 @@ public class Ternary {
 
 * What is a **constructor** ?
 * What is the **default constructor** ?
-* Explain the the concept of *Inheritance*. Why doesn't Java supports the concept of *Multiple Inheritance* ?
+* Explain the concept of *Inheritance*. Why doesn't Java supports the concept of *Multiple Inheritance* ?
 * What is **Polymorphism** ?
 * What is **Overloading** ? What is **Overriding** ?
 * What is the output if we execute the following code:
@@ -137,7 +137,7 @@ class Dog extends Animal {
 * Explain the usage of the `default` keyword (Java 8 onwards).
 * With the introduction of the `default` keyword are there any reasons to use *Abstract Classes* instead of *Interfaces* ?
 * **Unchecked Exceptions** vs. **Checked Exceptions**.
-* What are the differences between **Exceptions** and an **Errors** ?Is there any similitude between the two ?
+* What are the differences between **Exceptions** and an **Errors** ? Is there any similitude between the two ?
 * Name 3 **Unchecked Exceptions**.
 * Name 3 **Checked Exceptions**.
 * What are **Java Annotations** ?
@@ -153,6 +153,7 @@ class Dog extends Animal {
 * Explain the **O(n) Notation** (Big O).
 * How does a **Stack** data-structure works ? Are there any standard Java Stack implementations ?
 * How does a **Queue** data-structure works ? Are there any standard Java Queue implementations ?
+* How does a **Binary Tree** data-structure works ? 
 * How can you recursively calculate the sum of numbers from a `List<Integer>` (don't use for/do/while loops).
 * What is tail recursion ?
 * Why is not possible to use primitives as generic types ?
@@ -220,6 +221,7 @@ class CustomData {
 * What is the difference between an `Iterator` and `ListIterator` ?
 * Are there any **Immutable** Collection Classes ?
 * What is a **RingBuffer** ?
+* What is a **SkipList** ? 
 * What happens if we run the following code:
 ```java
 class Test {
@@ -321,15 +323,12 @@ class Test {
 ```java
 class Test {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-
         CompletableFuture<Void> cf1 = CompletableFuture.runAsync(() -> {
             System.out.println("B");
         });
-
         CompletableFuture<Void> cf2 = CompletableFuture.runAsync(() -> {
             System.out.println("A");
         });
-
         cf1.get();
         cf2.get();
     }
