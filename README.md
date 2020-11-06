@@ -4,10 +4,11 @@
 * [OOP Questions](#oop-questions)
 * [Algorithms and Data Structures / Collections / Generics](#algorithms-and-data-structures--collections--generics)
 * [Streams And Lambdas](#streams-and-lambdas)
-* [Threads](#threads-async)
+* [Threads](#threads--async)
 * [Creational, Structural and Behavioral Design Patterns](#creational-structural-and-behavioral-design-patterns)
 * [Java EE](#java-ee)
 * [Spring](#spring)
+* [Microservices](#microservices)
 * [Generic WEB](#generic-web)
 * [SQL](#sql)
 * [Exercises](#exercises)
@@ -143,7 +144,13 @@ public class Strings {
 * Name 3 **Unchecked Exceptions**.
 * Name 3 **Checked Exceptions**.
 * What are **Java Annotations** ?
-
+* What are the **SOLID** principles and how do they apply to Java ? Explain:
+    * **S**ingle-Responsibility;
+    * **O**pen-Closed
+    * **L**iskov Substitution
+    * **I**nterface Segregation
+    * **D**ependency Inversion
+    
 ## Algorithms and Data Structures / Collections / Generics
 
 * Explain the **O(n) Notation** (Big O).
@@ -163,31 +170,50 @@ public class Strings {
 |         |         |         |        |
 |         |         |         |        |
 
-* What is the output if we run the following code:
+* The following code highlights the difference between various **Map** implementations. What is the output if we run it (`impossible to say`:
 ```java
-import java.util.HashSet;
-import java.util.Set;
+public class Maps {
+    public static void main(String[] args) {
+        Map<String, Integer> map1, map2, map3;
 
-class A {
+        map1 = Map.of(
+                "A", 0,
+                "D", 1,
+                "B", 2,
+                "C", 3
+        );
+
+        map2 = new LinkedHashMap<>(map1);
+        map3 = new TreeMap<>(map1);
+
+        System.out.println(map2);
+        System.out.println(map3);
+    }
+}
+```
+* Explain how a **HashMap** is implemented. What is the relationship between *equals()* and *hashCode()*.
+* Given the following code what is the Output (`3`):
+```java
+public class Sets {
+    public static void main(String[] args) {
+        Set<CustomData> set = new HashSet<>();
+        CustomData customData = new CustomData();
+
+        set.add(customData);
+        set.add(customData);
+        set.add(new CustomData());
+        set.add(new CustomData());
+
+        System.out.println(set.size());
+    }
+}
+class CustomData {
     @Override
     public int hashCode() {
         return 0;
     }
 }
-
-public class HashTest {
-    public static void main(String[] args) {
-        Set<A> set = new HashSet<>();
-
-        set.add(new A());
-        set.add(new A());
-        set.add(new A());
-
-        System.out.println(set.size());
-    }
-}
 ```
-* Explain how a **HashMap** is implemented. What is the relationship between *equals()* and *hashCode()*.
 * What are *hash collisions* ?
 * What are the operations for which a **LinkedList** is more efficient than an **ArrayList** ?
 * What is the difference between **CopyOnWriteArrayList**, **Vector** and **ArrayList** ?
@@ -199,22 +225,24 @@ public class HashTest {
 * What is a **RingBuffer** ?
 * What happens if we run the following code:
 ```java
-public static void main(String[] args) {
-        List<String> list = new LinkedList<>();
-
-        list.add("A");
-        list.add("C");
-        list.add("D");
-
-        Iterator<String> it = list.iterator();
-
-        System.out.println(it.next());
-
-        list.add(1, "B");
-        
-        System.out.println(it.next());
-        System.out.println(it.next());
-        System.out.println(it.next());
+class Test {
+    public static void main(String[] args) {
+            List<String> list = new LinkedList<>();
+    
+            list.add("A");
+            list.add("C");
+            list.add("D");
+    
+            Iterator<String> it = list.iterator();
+    
+            System.out.println(it.next());
+    
+            list.add(1, "B");
+            
+            System.out.println(it.next());
+            System.out.println(it.next());
+            System.out.println(it.next());
+    }
 }
 ```
 
@@ -229,6 +257,7 @@ public static void main(String[] args) {
 * Find out the sum of elements from a `List<Integer>` using the `reduce()` method.
 * What is the output if we run the following code:
 ```java
+class Test {
     public static void main(String[] args) {
         final List<String> l = new LinkedList<>();
 
@@ -241,9 +270,11 @@ public static void main(String[] args) {
             System.out.println(e);
         });
     }
+}
 ```
 * What is the output if we run the following code: 
 ```java
+class Test {
     public static void main(String[] args) throws InterruptedException {
 
         List<String> list = new LinkedList<>();
@@ -265,6 +296,7 @@ public static void main(String[] args) {
 
         Thread.sleep(2000);
     }
+}
 ```
 
 ### Threads & Async
@@ -278,8 +310,10 @@ public static void main(String[] args) {
 * Explain the concept of **Thread Pool** ?
 * What can you tell about the **Executor Interface** ?
 * What is a *Semaphore* in Java ?
+* Explain the concept of *Future* and *CompletableFuture*. What is the main difference between a *Future* and a *CompletableFuture* ?
 * What is the output if we execute the following code:
 ```java
+class Test {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
         CompletableFuture<Void> cf1 = CompletableFuture.runAsync(() -> {
@@ -293,6 +327,7 @@ public static void main(String[] args) {
         cf1.get();
         cf2.get();
     }
+}
 ```    
 
 ### Creational, Structural and Behavioral Design Patterns
@@ -309,6 +344,7 @@ public static void main(String[] args) {
 
 * Explain the concept of *Inversion of Control*. What is the **Spring IoC Container** ?
 * Explain the concept of *Dependency Injection* (in Spring).
+* Do you know any other libraries that provide *Dependency Injection* features ?
 * What are the main advantages and disadvantages for *setter dependency injection* vs *constructor dependency injection* ?
 * What is a **Spring Bean** ?
 * What are the main **Spring Bean Scopes** ? Explain `singleton`, `prototype`, `request`, `session`, `global session`.
@@ -321,6 +357,21 @@ public static void main(String[] args) {
 * What is **Spring Integration** ? Give example of a Scenario where you would propose to use **Spring Integration** ?
 * What is **Spring Batch** ? Give example of a Scenario where you would propose to use **Spring Batch** ?
 * What is **Spring Security** ? Give example of a Scenario where you would propose to use **Spring Security** ?
+
+### Microservices
+
+* What are the advantages and disadvantages of using a Microservice based architecture ?
+> **Advantages**: Improved Scalability, Fault Isolation, Localised Complexity, Increased Agility, Simplified Debugging and Maintenance, Smaller Development Teams, etc.
+>
+> **Disadvantages**: Complexity (e.g.: Dependencies), Requires accurate pre-planning, End-to-end testing is difficult, Complex deployment procedures, etc. 
+* What is an API Gateway ? What "problem" does it solve ?
+* What is a Circuit Breaker ? What "problem" does it solve ? How is the `@HystrixCommand` annotations works in a Spring Cloud implementation?
+* Explain the concept of **Observability** ?
+    * What is the **Log Aggregation** pattern ? What problem does it solve ? Can you give examples of **Log Aggregation** solutions (e.g.: AWS Cloud Watch) ?
+    * What is the **Application Metrics** pattern ? What problem does it solve ? What are the two models of aggregating metrics (push. vs pull) ? Can you give examples of **Application Metrics** solutions ?
+    * What is the **Distributed Tracing** pattern ?
+* You have applied the **Database per Service** pattern, so each microservice has its own database. Some business transactions are spanning over multiple services, so you need a mechanism to implement transaction that Span Services. How to implement transaction that span services ? (e.g.: **Saga Pattern**)
+* You have applied the **Database per Service** pattern, so each microservice has its own database. Additionally, you have implemented the **Event Sourcing** Pattern and data is no longer easily queryable. How to implement a query that retrieves data from multiple services in a micorservice architecture ? (e.g.: Command Query Responsibility Segregation - CQRS).    
 
 ### Generic WEB
 
@@ -341,6 +392,11 @@ public static void main(String[] args) {
 | Get info for a book | | |
 
 ### SQL
+* What is **ACID** standing for ? Explain:
+    * **A**tomicity
+    * **C**onsistency
+    * **I**solation
+    * **D**urability 
 
 *Given the following SQL table:*
 
@@ -372,8 +428,20 @@ public static void main(String[] args) {
 * What is **Continuous Integration** (CI) ?
 * Name other **JVM**-based languages ?
 * What is **Functional Programming** ? Can you give a few examples of Functional Programming languages ?
+* What is a **DSL** ? Can you write a **DSL** in Java ? 
+* What Quality Control tools do you know ? What is a Quality Gate ?
 
 ### Exercises
+
+#### The solitary integer (Simple)
+
+Given a list of integers `LIST = [1,4,3,3,2,5,1,2,5,7,7, ...]` with size `N`.
+
+We know `LIST` contains only duplicated numbers (numbers that appear twice) except ONE integer which is called *The Solitary Integer*.
+
+Write an efficient algorithm that will determine this integer ?
+
+Can you solve the exercise in O(N) ?
 
 #### Pangrams (Simple)
 
@@ -422,3 +490,4 @@ YES
 NO
 YES
 ```
+
