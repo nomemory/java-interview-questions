@@ -24,7 +24,7 @@ public void swap(int x, int y) { /** code here **/ }
 * What is a *primitive type* in Java ? What are the main *primitive types* ?
 * What is *auto-boxing/unboxing* ?
 * What is *implicit casting* ? What is *explicit casting* ?
-* If developing an e-commerce site, what is the recommend type to use for the *price* if performance is not an issue. What is performance is an issue ?
+* If developing an e-commerce site, what is the recommend type to use for the *price* if performance is not an issue. What if performance is an issue ?
 * Explain the usage of the following keywords: `strictfp`, `native`.
 * Explain the usage of the following keyword: `final`.
 * Can you give example of a `final` class from the Java Standard library ?
@@ -148,7 +148,9 @@ public class Strings {
 
 * Explain the **O(n) Notation** (Big O).
 * How does a **Stack** data-structure works ? Are there any standard Java Stack implementations ?
-* Recursively calculate the sum of numbers from a `List<Integer>` (don't use for/do/while loops).
+* How does a **Queue** data-structure works ? Are there any standard Java Queue implementations ?
+* How can you recursively calculate the sum of numbers from a `List<Integer>` (don't use for/do/while loops).
+* What is tail recursion ?
 * Why is not possible to use primitives as generic types ?
 * Explain the concept of **Type Erasure**.
 * Explain the following data structures: *List*, *Map*, *Queue*, *Set*.
@@ -265,7 +267,7 @@ public static void main(String[] args) {
     }
 ```
 
-### Threads
+### Threads & Async
 
 * What is a Thread ?
 * Is the `++` operator thread-safe ?
@@ -293,19 +295,15 @@ public static void main(String[] args) {
     }
 ```    
 
-### Design Patterns
+### Creational, Structural and Behavioral Design Patterns
 
-* Singleton
-* Builder
-* Factory
-* Visitor
-
-### Java EE
-
-* What is a Servlet ?
-* What are the main methods of a HttpServlet ?
-* What are the main bean scopes ? Explain the following annotations: `@RequestScoped`, `@SessionScoped`, `@ApplicationScoped`, `@Dependent`, `@Conversation` .
-* What is the main difference between a Servlet and Filter ?
+* What is a **Design Pattern** ?
+* What is a **Creational Design Pattern** ?
+* Pick two or three **Creational Design Patterns** from the following list and describe how you've used them in your code: *Abstract Factory*, *Builder*, *Factory Method*, *Prototype*, *Singleton* ?
+* What is a **Structural Design Pattern** ?
+* Pick two or three **Structural Design Patterns** from the following list and describe how you've used them in your code: *Adapter*, *Decorator*, *Facade*, *Flyweight*, *Proxy*?
+* What is a **Behavioral Design Pattern** ?
+* Pick two or three **Behavioral Design Patterns** from the following list and describe how you've used them in your code: *Chain Of Responsability*, *Command*, *Iterator*, *Mediator*, *Memento*, *Observer*, *Visitor*
 
 ### Spring
 
@@ -318,11 +316,11 @@ public static void main(String[] args) {
 * Explain how the following Spring Annotations are working: `@Autowired`, `@Qualifier`, `@Required`.
 * Explain how the `@Async` annotations functions.
 * Explain the concept of **Spring Profiles**.
-* What is **Spring Boot** ?
-* What is **Spring Data** ?
-* What is **Spring Integration** ?
-* What is **Spring Batch** ?
-* What is **Spring Security** ?
+* What is **Spring Boot** ? Give example of a Scenario where you would propose to use **Spring Boot** ?
+* What is **Spring Data** ? Give example of a Scenario where you would propose to use **Spring Data** ?
+* What is **Spring Integration** ? Give example of a Scenario where you would propose to use **Spring Integration** ?
+* What is **Spring Batch** ? Give example of a Scenario where you would propose to use **Spring Batch** ?
+* What is **Spring Security** ? Give example of a Scenario where you would propose to use **Spring Security** ?
 
 ### Generic WEB
 
