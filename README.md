@@ -441,6 +441,10 @@ class Test {
 
 ### Exercises
 
+#### Find the longest substring(s) that doesn't contains any letter duplicates from a string
+
+Input examples: `"abcsadjnii"`
+
 #### The solitary integer (Simple)
 
 Given a list of integers `LIST = [1,4,3,3,2,5,1,2,5,7,7, ...]` with size `N`.
