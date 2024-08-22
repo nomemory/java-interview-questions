@@ -406,7 +406,7 @@ class Test {
     * **I**solation
     * **D**urability 
 
-*Given the following SQL table:*
+*Given the following SQL table `employees`:*
 
 | id | full_name | mng_id |
 | -- | --------- | ------ |
